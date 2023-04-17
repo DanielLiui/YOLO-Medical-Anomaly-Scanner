@@ -1,0 +1,109 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Clairvoyant</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}" />
+    <link href="{{ url_for('static',filename='css/demo-style.css') }}" rel="stylesheet" />  <!-- includes Bootstrap -->
+</head>
+
+<body>
+<div class="body-div">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <a class="navbar-brand" href="/" style="font-family:monospace;font-size: xx-large;">Clairvoyant</a>
+            <img src="{{ url_for('static', filename='images/clairvoyant-logo.png') }}" alt="logo" wdith="65" height="65">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/demo">Demo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Upload file div -->
+    <div class = "parallax_three" >  <!-- static background -->
+        <br>
+        <div class = "midCol2">
+            <h5 class = "title1"> Input a file or choose an image </h5>
+            <form action = "/upload" method = "POST" enctype = "multipart/form-data">
+                <div class = "Imgs">
+                    <input type = "file" class = "fButton" name = "file" id = "file"/>
+                    <input type = "submit" class = "sButton" name = "submit" id = "submit"/>
+                </div>
+            </form> 
+            <p id = "sample-link"> <a href="#"> {{ sample_link }} </a></p>
+
+            <!-- sample imgs -->
+            <h5 class = "imgTitle"> Brain Tumor </h5>
+            <div class = "Imgs">
+            <a href="/demo/sample_img/brain_tumor1.jpg">  
+                <img class = "leftImg testImages" src="{{ url_for('static', filename='sample_imgs/brain_tumor1.jpg') }}" alt="">
+            </a>
+            <a href="/demo/sample_img/brain_tumor2.jpg">  
+                <img class = "rightImg testImages" src="{{ url_for('static', filename='sample_imgs/brain_tumor2.jpg') }}" alt="">
+            </a>
+            </div>
+            <h5 class = "imgTitle"> Brain Hemorrhage </h5>
+            <div class = "Imgs">
+            <a href="static/sample_images/hem1.jpg" download="hem1">
+                <img class = "leftImg testImages" src="{{ url_for('static', filename='sample_imgs/hemorrhage1.jpg') }}" alt="">
+            </a>
+            <a href="static/sample_images/hem2.jpg" download="hem2">
+                <img class = "rightImg testImages" src="{{ url_for('static', filename='sample_imgs/hemorrhage2.jpg') }}" alt="">
+            </a><br><br>
+            </div>
+            <h5 class = "imgTitle"> Scoliosis </h5>
+            <div class = "Imgs">
+                <a href="static/sample_images/scol1.jpg" download="scol1">
+                    <img class = "leftImg testImages" src="{{ url_for('static', filename='sample_imgs/scoliosis1.jpg') }}" alt="">
+                </a>
+                <a href="static/sample_images/scol2.jpg" download="scol2">
+                    <img  class = "rightImg testImages" src="{{ url_for('static', filename='sample_imgs/mild_scoliosis.png') }}" alt="">
+                </a>
+            </div>
+            <h5 class = "imgTitle"> Normal brain & spine </h5>
+            <div class = "Imgs">
+                <a href="static/sample_images/scol1.jpg" download="scol1">
+                    <img class = "leftImg testImages" src="{{ url_for('static', filename='sample_imgs/normal_brain.jpg') }}" alt="">
+                </a>
+                <a href="static/sample_images/scol2.jpg" download="scol2">
+                    <img  class = "rightImg testImages" src="{{ url_for('static', filename='sample_imgs/reg_spine.png') }}" alt="">
+                </a>
+            </div>
+        </div>
+        
+        <!-- Detection div-->
+        <div class = "midCol2">
+            <h4 class = "title1"> Detection </h4>  <!-- change title css to be same -->
+            {% if img_uploaded %}
+                <p> {{ det_info }}</p>
+                <img class="detect-img" src="static/detections/{{ user_image }}" alt="">
+                <!-- <img src="static/detections/{{ user_image }}" width=370px height=380px 
+                style="object-fit:cover; max-width: 100%; max-height: 100%;"> -->
+            
+            {% else %}
+                <div style="height: 200px;"> </div>
+
+            {% endif %}
+        </div> <br>
+    </div>
+
+    <footer class="py-5 bg-dark">
+        <div class="container px-4 px-lg-5">
+        <p class="m-0 text-center text-white">Copyright Clairvoyant</p>
+        </div>
+    </footer>
+
+</div>
+</body>
+</html>

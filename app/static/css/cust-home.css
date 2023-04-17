@@ -1,0 +1,36 @@
+
+
+body {
+    background-image: url('https://wallpaper.dog/large/5507248.jpg');
+    background-repeat: no-repeat;
+    background-attachment: relative; 
+    background-size: cover;
+}
+
+.content-p {
+    font-style: normal; font-family: monospace; font-size: 30px;
+    text-align: center; color: white;
+}
+
+.subtitle { /*extends content-p*/
+    color: rgb(255, 28, 65);
+}
+
+.button2{
+    width: 60%;
+    background-color: rgba(0, 0, 0, 0.75);  color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    padding: 7.5px;
+
+    font-size: 24px;
+    transition-duration: 0.8s;
+    cursor: pointer;
+}
+
+.button2:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    padding: 12px;
+}

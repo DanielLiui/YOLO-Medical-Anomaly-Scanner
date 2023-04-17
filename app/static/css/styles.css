@@ -1,0 +1,52 @@
+
+
+body {    
+    font-size: 16px;                  
+    line-height: 20px;
+}
+
+#body-div {
+    background-color: rgb(64,158,148);  /*turquoise*/ 
+    text-align: center;
+    /* background-image: url("https://static.vecteezy.com/system/resources/previews/002/858/856/non_2x/gradient-blue-brain-neuron-background-free-vector.jpg"); */
+}
+
+.more-nav {
+    background-color: rgb(7,59,76); /*dark turquoise*/
+    color: white;
+    padding: 8px;
+}
+
+.content-div {
+    background-color: rgb(165, 174, 184); /*transp col*/
+    border-radius: 7px;
+    padding: 10px;  margin: 20px;
+    max-width: 500px;
+    text-align: center;
+}
+
+.subtitle { 
+    color: rgb(231,61,121);  /*red pink*/
+}
+
+.sampleImg {
+    height: 100px;  border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+.sampleImg:hover {
+    box-shadow: 8px 8px 4px rgb(120,120,120), -4px -4px 2px rgb(120,120,120);
+}
+
+.detectImg {
+    height: 200px;  border-radius: 4px;
+}
+
+.td-title {
+    padding: 5px;
+}
+
+.td-img {
+    width: 150px;  padding: 5px;
+    text-align: centre;
+}
