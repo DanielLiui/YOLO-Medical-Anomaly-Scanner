@@ -29,9 +29,10 @@ def upload_sample(img_fName):
 
 @app.route('/demo')
 def demo():
-
-    shutil.rmtree("static/detections") 
-    os.mkdir("static/detections")
+    if os.path.exists('static/detections'):
+        shutil.rmtree("static/detections") 
+        os.mkdir("static/detections")
+        
     sel_img = ""
     return render_template('demo2.html', sample_link=sel_img, img_uploaded=False)
 
@@ -95,9 +96,8 @@ def upload_file():
         return render_template('demo2.html', sample_link=sel_img, img_uploaded=True, user_image=img_path,
         det_info=det_info)   
 
-'''
+
 if __name__ == "__main__":
-    #app.run(port=5000, debug=True)
-    app.run(host='0.0.0.0', port=3000, debug=False)
-'''  
+    app.run(port=5000, debug=True)
+
     
