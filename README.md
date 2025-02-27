@@ -1,5 +1,11 @@
 # YOLO-Medical-Anomaly-Scanner
-A website that uses YoloV5 to detect brain tumours, hemorrhages, and scoliosis in brain CT scans and spinal X-rays that the user uploads
+A website that lets you test a YoloV5 model that detects brain tumours, hemorrhages, and scoliosis in brain CT scans and spinal X-rays
+
+
+# Model performance
+mAP: 77.5%
+Precision: 84%
+Recall: 76.9%
 
 
 # Run
